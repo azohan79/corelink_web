@@ -13,8 +13,8 @@ urlpatterns = [
     path("about/", core_views.about, name="about"),
 
     # features (список + деталка)
-    path("features/", core_views.features_list, name="features_list"),
-    path("features/<slug:slug>/", core_views.feature_detail, name="feature_detail"),
+    path('features/', views.features, name='features'),
+    path('feature-detail/', views.feature_detail, name='feature_detail'),
 
     # блог (список + деталка)
     path("blog/", core_views.BlogPostListView.as_view(), name="blog_list"),

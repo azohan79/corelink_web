@@ -1,0 +1,188 @@
+{% extends "corelink/base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <!-- page header - start -->
+    <div class="page-header">
+        <div class="page-header-wrapper">
+            <div class="page-header-inner">
+                <div class="container">
+                    <div class="row d-lg-flex align-items-lg-end">
+                        <div class="col-lg-6">
+                            <div class="page-header-content c-white">
+                                <h1>{{ post.title }}</h1>
+                                <ul>
+                                    <li>
+                                        <a href="{% url 'index' %}" class="link-underline">
+                                            <span>Home</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <i class="las la-angle-right"></i>
+                                        <a href="{% url 'blog_list' %}" class="link-underline">
+                                            <span>Blog</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <i class="las la-angle-right"></i>
+                                        <span>{{ post.title }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="page-header-search">
+                                <form method="get" action="{% url 'blog_list' %}">
+                                    <input type="text" name="q" placeholder="Search">
+                                    <button type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="background-pattern background-pattern-2">
+                <div class="background-pattern-img background-loop"
+                     style="background-image: url({% static 'corelink/assets/images/patterns/pattern.jpg' %});">
+                </div>
+                <div class="background-pattern-gradient"></div>
+                <div class="background-pattern-bottom">
+                    <div class="image"
+                         style="background-image: url({% static 'corelink/assets/images/patterns/pattern-2.jpg' %});">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- page header - end -->
+
+    <!-- blog detail - start -->
+    <div class="blog-detail blog-detail-1">
+        <div class="blog-detail-wrapper">
+            <div class="container">
+                <!-- thumbnail -->
+                <div class="row">
+                    <div class="col-lg-12 offset-lg-0 col-10 offset-1">
+                        <div class="blog-detail-thumbnail drop-shadow">
+                            {% if post.header_image %}
+                                <img src="{{ post.header_image.url }}" alt="{{ post.title }}">
+                            {% else %}
+                                <img src="{% static 'corelink/assets/images/blog/blog-read-img.jpg' %}" alt="{{ post.title }}">
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- content -->
+                <div class="row">
+                    <div class="col-md-8 offset-md-2 col-10 offset-1">
+                        <div class="blog-detail-content c-grey">
+                            <h1 class="c-dark f-w-700">{{ post.title }}</h1>
+
+                            <div class="blog-single-details">
+                                <div class="date">
+                                    <i class="las la-calendar"></i>
+                                    {{ post.created_at|date:"M d, Y" }}
+                                </div>
+                            </div>
+
+                            {# основной контент из админки (можно хранить html) #}
+                            <div class="blog-body">
+                                {{ post.content|safe }}
+                            </div>
+
+                            {% if post.allow_sharing %}
+                                <div class="social social-gradient">
+                                    <p class="paragraph-small c-grey-1">Share this post:</p>
+                                    <ul>
+                                        <li class="twitter">
+                                            <a href="#">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="facebook">
+                                            <a href="#">
+                                                <i class="fab fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="linkedin">
+                                            <a href="#">
+                                                <i class="fab fa-linkedin-in"></i>
+                                            </a>
+                                        </li>
+                                        <li class="youtube">
+                                            <a href="#">
+                                                <i class="fab fa-youtube"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# related posts - optionally #}
+            {% if related_posts %}
+                <div class="related-posts">
+                    <div class="related-posts-wrapper">
+                        <div class="related-posts-inner">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                                        <div class="section-heading section-heading-1 c-white">
+                                            <div class="sub-heading upper ls-1">
+                                                <i class="las la-minus"></i>
+                                                <span>Related Posts</span>
+                                            </div>
+                                            <h2>Explore more insights</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    {% for rp in related_posts %}
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="blog-single">
+                                                <div class="thumbnail">
+                                                    <a href="{% url 'blog_detail' slug=rp.slug %}">
+                                                        {% if rp.header_image %}
+                                                            <img src="{{ rp.header_image.url }}" alt="{{ rp.title }}">
+                                                        {% else %}
+                                                            <img src="{% static 'corelink/assets/images/blog/blog-1-img-1.jpg' %}" alt="{{ rp.title }}">
+                                                        {% endif %}
+                                                    </a>
+                                                </div>
+                                                <div class="content c-grey">
+                                                    <h3 class="c-dark f-w-700">
+                                                        <a href="{% url 'blog_detail' slug=rp.slug %}">
+                                                            {{ rp.title }}
+                                                        </a>
+                                                    </h3>
+                                                    <div class="blog-single-details">
+                                                        <div class="date">
+                                                            <i class="las la-calendar"></i>
+                                                            {{ rp.created_at|date:"M d, Y" }}
+                                                        </div>
+                                                    </div>
+                                                    {% if rp.excerpt %}
+                                                        <p>{{ rp.excerpt }}</p>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <!-- blog detail - end -->
+
+{% endblock %}

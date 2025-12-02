@@ -13,10 +13,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 
 import os
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -130,8 +126,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 STATIC_URL = '/static/'
-STATIC_ROOT = '/var/www/corelink_es_usr/data/www/corelink.es/staticfiles'
+STATIC_ROOT = Path('/var/www/corelink_es_usr/data/www/corelink.es/staticfiles')
+
+# добавляем строку:
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',   # это /apps/static
+]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR.parent, "media")

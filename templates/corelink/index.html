@@ -1,0 +1,87 @@
+{% extends "corelink/base.html" %}
+{% load static %}
+
+{% block title %}CoreLink – IoT station automation platform{% endblock %}
+
+{% block content %}
+
+    <!-- hero 1 - start -->
+    <div class="hero hero-1">
+        <div class="hero-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-0 order-lg-1 col-10 offset-1 order-2">
+                        <div class="hero-content">
+                            <h1 class="c-dark">Software solutions in your hands.</h1>
+                            <p class="large c-grey">
+                                Orions is a universal app that helps you setup your apps in
+                                a beautiful and effective way to get more downloads across
+                                <b>Android</b> and <b>iOS</b> platforms.
+                            </p>
+                            <div class="download-button-group">
+                                <a href="#" class="download-button download-button-google">
+                                    <div class="download-button-inner">
+                                        <div class="download-button-icon c-purple">
+                                            <i class="fab fa-google-play"></i>
+                                        </div>
+                                        <div class="download-button-content">
+                                            <h5 class="c-grey upper ls-1">get it on</h5>
+                                            <h3 class="c-dark ls-2">Google Play</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" class="download-button download-button-apple">
+                                    <div class="download-button-inner">
+                                        <div class="download-button-icon c-pink">
+                                            <i class="fab fa-apple"></i>
+                                        </div>
+                                        <div class="download-button-content">
+                                            <h5 class="c-grey upper ls-1">get it on</h5>
+                                            <h3 class="c-dark ls-2">Apple Store</h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 offset-lg-0 order-lg-2 col-10 offset-1 order-1">
+                        <div class="hero-image">
+                            <img class="drop-shadow" src="{% static 'corelink/assets/images/hero-phone.png' %}" alt="image">
+                            <div class="hero-absolute-image">
+                                <img src="{% static 'corelink/assets/images/Artwork.png' %}" alt="artwork">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- hero 1 - end -->
+
+    <!-- дальше просто та же верстка, только пути к картинкам меняем на {% static %} -->
+
+    <!-- app features wide section - start -->
+    <div class="app-feature app-feature-1">
+        <div class="app-feature-wrapper">
+            <div class="container">
+                ...
+                <!-- картинки/фоны типа -->
+                <!-- style="background-image: url({% static 'corelink/assets/images/patterns/pattern.jpg' %});" -->
+                ...
+            </div>
+        </div>
+    </div>
+    <!-- app features wide section - end -->
+
+    <!-- здесь оставляем все остальные секции как в твоей верстке
+         (video-section, feature-section, pricing-section, testimonial-section,
+          faq-section, screen-section, blog-section, cta-section,
+          contact-form-section)
+         просто аккуратно заменяя:
+         - src="assets/..." -> src="{% static 'corelink/assets/...' %}"
+         - style="background-image: url(assets/...)" ->
+           style="background-image: url({% static 'corelink/assets/...' %});"
+    -->
+
+{% endblock %}

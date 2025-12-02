@@ -36,6 +36,9 @@ def feature_detail(request, slug=None):
 def pricing(request):
     return render(request, "corelink/pricing.html")
 
+def contact(request):
+    return render(request, "corelink/contact.html")
+
 
 class BlogPostListView(ListView):
     model = BlogPost

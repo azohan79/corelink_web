@@ -1,0 +1,252 @@
+{% extends "corelink/base.html" %}
+{% load static %}
+
+{% block content %}
+
+{# page header #}
+<div class="page-header">
+    <div class="page-header-wrapper">
+        <div class="page-header-inner">
+            <div class="container">
+                <div class="row d-lg-flex align-items-lg-end">
+                    <div class="col-lg-6">
+                        <div class="page-header-content c-white">
+                            <h1>Contact Us</h1>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'index' %}" class="link-underline">
+                                        <span>Home</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="las la-angle-right"></i>
+                                    <a href="{% url 'contact' %}" class="link-underline">
+                                        <span>Contact</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="page-header-search">
+                            <form>
+                                <input type="text" placeholder="Search">
+                                <button type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="background-pattern background-pattern-2">
+                <div class="background-pattern-img background-loop"
+                     style="background-image: url({% static 'assets/images/patterns/pattern.jpg' %});"></div>
+                <div class="background-pattern-gradient"></div>
+                <div class="background-pattern-bottom">
+                    <div class="image"
+                         style="background-image: url({% static 'assets/images/patterns/pattern-2.jpg' %});"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{# page header - end #}
+
+{# contact details - start #}
+<div class="contact-details">
+    <div class="contact-details-wrapper">
+        <div class="container">
+            {# heading #}
+            <div class="row">
+                <div class="col-lg-12 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                    <div class="section-heading center width-55">
+                        <div class="sub-heading c-blue upper ls-1">
+                            <i class="las la-handshake"></i>
+                            <h5>get in touch</h5>
+                        </div>
+                        <div class="main-heading c-dark">
+                            <h1>Many ways to reach us today.</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# cards #}
+            <div class="row gx-5 details-row">
+                <div class="col-lg-4 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                    <div class="app-feature-single app-feature-single-1">
+                        <div class="app-feature-single-wrapper">
+                            <div class="icon">
+                                <i class="las la-phone-volume"></i>
+                            </div>
+                            <h3 class="c-dark">Call Us</h3>
+                            <p class="c-grey">
+                                Phone:
+                                <a href="tel:+123456789" class="link-underline link-underline-1">
+                                    <span>+123 456 789</span>
+                                </a>
+                            </p>
+                            <p class="c-grey">
+                                Fax:
+                                <a href="tel:+123456789" class="link-underline link-underline-1">
+                                    <span>+123 456 789</span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                    <div class="app-feature-single app-feature-single-1">
+                        <div class="app-feature-single-wrapper">
+                            <div class="icon">
+                                <i class="las la-envelope-open"></i>
+                            </div>
+                            <h3 class="c-dark">Email Us</h3>
+                            <p class="c-grey">
+                                <a href="mailto:media@orions.com" class="link-underline link-underline-1">
+                                    <span>media@orions.com</span>
+                                </a>
+                            </p>
+                            <p class="c-grey">
+                                <a href="mailto:support@orions.com" class="link-underline link-underline-1">
+                                    <span>support@orions.com</span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                    <div class="app-feature-single app-feature-single-1">
+                        <div class="app-feature-single-wrapper">
+                            <div class="icon">
+                                <i class="las la-map-marked-alt"></i>
+                            </div>
+                            <h3 class="c-dark">Find Us</h3>
+                            <p class="c-grey">Orions, Inc.</p>
+                            <p class="c-grey">30 Aarhus, Denmark</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {# contact details row - end #}
+        </div>
+    </div>
+</div>
+{# contact details - end #}
+
+{# contact form section #}
+<div class="contact-form-section">
+    <div class="contact-form-section-wrapper">
+        <div class="container">
+            <div class="row gx-5 contact-form-section-row">
+                <div class="col-lg-6 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                    <div class="contact-form drop-shadow-2">
+                        <div class="contact-form-wrapper">
+                            <div class="section-heading section-heading-2 center">
+                                <div class="sub-heading c-blue upper ls-1">
+                                    <i class="las la-envelope"></i>
+                                    <h5>contact</h5>
+                                </div>
+                                <div class="main-heading c-dark">
+                                    <h1>Write message</h1>
+                                </div>
+                            </div>
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="form-floating">
+                                    <input class="input form-control" id="name-field" type="text"
+                                           placeholder="Full name">
+                                    <label for="name-field">Full name</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="input form-control" id="email-field" type="email"
+                                           placeholder="Email address">
+                                    <label for="email-field">Email address</label>
+                                </div>
+                                <div class="form-floating">
+                                    <textarea class="input form-control" id="message-field"
+                                              placeholder="Message"></textarea>
+                                    <label for="message-field">Message</label>
+                                </div>
+                                <button type="submit" class="button button-2">
+                                    <span class="button-inner">
+                                        <span class="button-content">
+                                            <span class="text">Submit Reply</span>
+                                        </span>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                    <div class="contact-form contact-form-1 drop-shadow-2">
+                        <div class="contact-form-wrapper">
+                            <div class="section-heading section-heading-2 center">
+                                <div class="sub-heading c-blue upper ls-1">
+                                    <i class="las la-envelope-open"></i>
+                                    <h5>subscribe</h5>
+                                </div>
+                                <div class="main-heading c-dark">
+                                    <h1>Our newsletter</h1>
+                                </div>
+                            </div>
+                            <div class="contact-form-icon">
+                                <i class="las la-envelope-open-text"></i>
+                            </div>
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="form-floating">
+                                    <input class="input form-control" id="email-field-1" type="text"
+                                           placeholder="Email address">
+                                    <label for="email-field-1">Email address</label>
+                                </div>
+                                <button type="submit" class="button button-2">
+                                    <span class="button-inner">
+                                        <span class="button-content">
+                                            <span class="text">Subscribe</span>
+                                        </span>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-section-pattern">
+                <div class="left" style="background-image: url('{% static "assets/images/Artwork-left.png" %}');"></div>
+                <div class="right" style="background-image: url('{% static "assets/images/Artwork-right.png" %}');"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{# contact form section - end #}
+
+{# instagram - start #}
+<div class="instagram">
+    <div class="instagram-wrapper">
+        <div class="instagram-slider">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {% for i in "123456"|make_list %}
+                    <div class="swiper-slide">
+                        <div class="instagram-slide">
+                            <img src="{% static 'assets/images/instagram/instagram-img-'|add:i|add:'.jpg' %}"
+                                 alt="instagram-slide-image">
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{# instagram - end #}
+
+{% endblock %}

@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from coreconfig import views as core_views
 
 from coreconfig import views as core_views
 
@@ -22,6 +23,9 @@ urlpatterns = [
     
     # pricing
     path("pricing/", core_views.pricing, name="pricing"),
+    
+    # contact
+    path("contact/", core_views.contact, name="contact"),
 ]
 
 if settings.DEBUG:

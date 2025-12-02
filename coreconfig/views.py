@@ -1,3 +1,11 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def index(request):
+    """
+    Главная страница CoreLink.
+    Шаблон: templates/corelink/index.html
+    """
+    return render(request, "corelink/index.html")
+
+

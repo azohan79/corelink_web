@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 # Create your models here.
 class SiteSettings(models.Model):
@@ -60,3 +61,32 @@ class MenuItem(models.Model):
 
     def __str__(self):
         return f"{self.get_location_display()} — {self.title}"
+    
+class BlogPost(models.Model):
+    title = models.CharField("Title", max_length=255)
+    slug = models.SlugField("Slug", max_length=255, unique=True, blank=True)
+    excerpt = models.TextField("Short description", blank=True)
+    content = models.TextField("Content")
+    cover_image = models.ImageField(
+        "Cover image",
+        upload_to="blog/",
+        blank=True,
+        null=True,
+    )
+    created_at = models.DateTimeField("Created at", auto_now_add=True)
+    updated_at = models.DateTimeField("Updated at", auto_now=True)
+    is_published = models.BooleanField("Published", default=True)
+
+    class Meta:
+        verbose_name = "Blog post"
+        verbose_name_plural = "Blog posts"
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        # автогенерируем slug, если не задан
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)

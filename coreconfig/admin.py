@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SiteSettings, MenuItem
+from .models import SiteSettings, MenuItem, BlogPost
 
 @admin.register(SiteSettings)
 class SiteSettingsAdmin(admin.ModelAdmin):
@@ -19,4 +19,11 @@ class MenuItemAdmin(admin.ModelAdmin):
     list_filter = ("location",)
     search_fields = ("title", "url")
     ordering = ("location", "order")
+    
+@admin.register(BlogPost)
+class BlogPostAdmin(admin.ModelAdmin):
+    list_display = ("title", "is_published", "created_at")
+    list_filter = ("is_published", "created_at")
+    search_fields = ("title", "excerpt", "content")
+    prepopulated_fields = {"slug": ("title",)}
 

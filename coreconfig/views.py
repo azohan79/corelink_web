@@ -31,16 +31,13 @@ def features_list(request):
 
 
 def feature_detail(request, slug=None):
-    """
-    Детальная страница фичи (пока статичная заглушка).
-    """
     return render(request, "corelink/feature_detail.html")
+
+def pricing(request):
+    return render(request, "corelink/pricing.html")
 
 
 class BlogPostListView(ListView):
-    """
-    Список постов блога.
-    """
     model = BlogPost
     template_name = "corelink/blog_list.html"
     context_object_name = "posts"

@@ -19,6 +19,9 @@ urlpatterns = [
     # блог (список + деталка)
     path("blog/", core_views.BlogPostListView.as_view(), name="blog_list"),
     path("blog/<slug:slug>/", core_views.BlogPostDetailView.as_view(), name="blog_detail"),
+    
+    # pricing
+    path("pricing/", core_views.pricing, name="pricing"),
 ]
 
 if settings.DEBUG:

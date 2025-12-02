@@ -1,0 +1,418 @@
+{% extends "corelink/base.html" %}
+{% load static %}
+
+{% block content %}
+
+    {# page header - start #}
+    <div class="page-header">
+        <div class="page-header-wrapper">
+            <div class="page-header-inner">
+                <div class="container">
+                    <div class="row d-lg-flex align-items-lg-end">
+                        <div class="col-lg-6">
+                            <div class="page-header-content c-white">
+                                <h1>Pricing</h1>
+                                <ul>
+                                    <li>
+                                        <a href="{% url 'index' %}" class="link-underline">
+                                            <span>Home</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <i class="las la-angle-right"></i>
+                                        <a href="{% url 'pricing' %}" class="link-underline">
+                                            <span>Pricing</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="page-header-search">
+                                <form>
+                                    <input type="text" placeholder="Search">
+                                    <button type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="background-pattern background-pattern-2">
+                <div class="background-pattern-img background-loop"
+                     style="background-image: url({% static 'assets/images/patterns/pattern.jpg' %});"></div>
+                <div class="background-pattern-gradient"></div>
+                <div class="background-pattern-bottom">
+                    <div class="image"
+                         style="background-image: url({% static 'assets/images/patterns/pattern-2.jpg' %});"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# page header - end #}
+
+    {# about/pricing intro section - start #}
+    <div class="about-section">
+        <div class="about-section-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-0 order-lg-1 col-md-8 offset-md-2 col-10 offset-1 order-2">
+                        <div class="about-section-content c-grey">
+                            <div class="section-heading">
+                                <div class="sub-heading c-blue upper ls-1">
+                                    <i class="las la-user-circle"></i>
+                                    <h5>pricing</h5>
+                                </div>
+                                <div class="main-heading c-dark">
+                                    <h1>Transparent pricing for you.</h1>
+                                </div>
+                            </div>
+                            <p class="paragraph-big">
+                                Bring all creature seas blessed whales were earth wherein evening dry one.
+                                Morning unto fly midst living so shall fish multiply meat day.
+                            </p>
+                            <p>
+                                There grass said shall won't thing moved shall sea all male two is. Fowl man sixth
+                                gathering heaven was brought air fill dry further abundantly them be from won't every
+                                have cattle darkness moveth every the darkness may which evening she'd thing own man is
+                                there said gathering be the in lesser called.
+                            </p>
+                            <p>
+                                Our, that subdue open above creature i forth make and third beast bring had creeping
+                                stars brought together. Creepeth creature by open us our appear creeping bring they're
+                                days.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 offset-lg-0 order-lg-2 col-md-8 offset-md-2 col-10 offset-1 order-1">
+                        <div class="about-section-image">
+                            <div class="pattern-image pattern-image-1">
+                                <div class="pattern-image-wrapper">
+                                    <img class="drop-shadow-1"
+                                         src="{% static 'assets/images/pricing-image-1.jpg' %}"
+                                         alt="pricing image">
+                                    <div class="background-pattern background-pattern-radius drop-shadow-1">
+                                        <div class="background-pattern-img background-loop"
+                                             style="background-image: url({% static 'assets/images/patterns/pattern.jpg' %});"></div>
+                                        <div class="background-pattern-gradient"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# about/pricing intro section - end #}
+
+    {# pricing section - start #}
+    <div class="pricing-section">
+        <div class="pricing-section-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                        <div class="section-heading center c-white">
+                            <div class="sub-heading upper ls-1">
+                                <i class="las la-tags"></i>
+                                <h5>Our app rates</h5>
+                            </div>
+                            <div class="main-heading">
+                                <h1>Pricing plans for you.</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing">
+                    <div class="row">
+                        <div class="col">
+                            <div class="switch">
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label" for="price-switch">Monthly</label>
+                                    <input class="form-check-input" type="checkbox" id="price-switch" checked="checked">
+                                    <label class="form-check-label" for="price-switch">Annual</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="pricing-slider">
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+
+                                        <div class="swiper-slide">
+                                            <div class="pricing-single basic">
+                                                <h5 class="plan">Basic</h5>
+                                                <div class="price price-month">
+                                                    <div class="month">
+                                                        $<span class="number">10.00</span><sup>/mo</sup>
+                                                    </div>
+                                                    <div class="year">
+                                                        $<span class="number">120.00</span><sup>/yr</sup>
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="button button-basic">
+                                                    <div class="button-inner">
+                                                        <div class="button-content">
+                                                            <h4>Get Started</h4>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <ul>
+                                                    <li class="available">Chat with doctors</li>
+                                                    <li class="available">Instant notifications</li>
+                                                    <li class="available">Subscription delivery</li>
+                                                    <li>Nutritional plans</li>
+                                                    <li>Customizeable menus</li>
+                                                    <li>Unlimited storage</li>
+                                                    <li>Weekly reports</li>
+                                                    <li>Fitness guides</li>
+                                                </ul>
+                                                <h6>No commitments, cancel anytime.</h6>
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-slide">
+                                            <div class="pricing-single standard">
+                                                <h5 class="plan">Standard</h5>
+                                                <div class="price price-month">
+                                                    <div class="month">
+                                                        $<span class="number">15.00</span><sup>/mo</sup>
+                                                    </div>
+                                                    <div class="year">
+                                                        $<span class="number">180.00</span><sup>/yr</sup>
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="button button-standard">
+                                                    <div class="button-inner">
+                                                        <div class="button-content">
+                                                            <h4>Get Started</h4>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <ul>
+                                                    <li class="available">Chat with doctors</li>
+                                                    <li class="available">Instant notifications</li>
+                                                    <li class="available">Subscription delivery</li>
+                                                    <li class="available">Nutritional plans</li>
+                                                    <li class="available">Customizeable menus</li>
+                                                    <li>Unlimited storage</li>
+                                                    <li>Weekly reports</li>
+                                                    <li>Fitness guides</li>
+                                                </ul>
+                                                <h6>No commitments, cancel anytime.</h6>
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-slide">
+                                            <div class="pricing-single premium">
+                                                <h5 class="plan">Premium</h5>
+                                                <div class="price price-month">
+                                                    <div class="month">
+                                                        $<span class="number">20.00</span><sup>/mo</sup>
+                                                    </div>
+                                                    <div class="year">
+                                                        $<span class="number">240.00</span><sup>/yr</sup>
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="button button-premium">
+                                                    <div class="button-inner">
+                                                        <div class="button-content">
+                                                            <h4>Get Started</h4>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <ul>
+                                                    <li class="available">Chat with doctors</li>
+                                                    <li class="available">Instant notifications</li>
+                                                    <li class="available">Subscription delivery</li>
+                                                    <li class="available">Nutritional plans</li>
+                                                    <li class="available">Customizeable menus</li>
+                                                    <li class="available">Unlimited storage</li>
+                                                    <li class="available">Weekly reports</li>
+                                                    <li class="available">Fitness guides</li>
+                                                </ul>
+                                                <h6>No commitments, cancel anytime.</h6>
+                                            </div>
+                                        </div>
+
+                                    </div> {# .swiper-wrapper #}
+                                </div> {# .swiper-container #}
+                            </div> {# .pricing-slider #}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="background-pattern background-pattern-1">
+                <div class="background-pattern-img background-loop"
+                     style="background-image: url({% static 'assets/images/patterns/pattern.jpg' %});"></div>
+                <div class="background-pattern-gradient"></div>
+                <div class="background-pattern-bottom">
+                    <div class="image"
+                         style="background-image: url({% static 'assets/images/patterns/pattern-1.jpg' %});"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# pricing section - end #}
+
+    {# faq section - start #}
+    <div class="faq-section faq-section-2">
+        <div class="faq-section-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-10 offset-xxl-1 col-lg-12 offset-lg-0 col-10 offset-1">
+                        <div class="section-heading center width-64">
+                            <div class="sub-heading c-blue upper ls-1">
+                                <i class="las la-file-alt"></i>
+                                <h5>discover</h5>
+                            </div>
+                            <div class="main-heading c-dark">
+                                <h1>Some frequently asked questions</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-9 col-md-8 col-10">
+                        <div class="faq-wrapper">
+                            <div class="faq" id="faq-accordion">
+
+                                {# item 1 #}
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-1">
+                                        <button class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#faq-collapse-1"
+                                                aria-expanded="true"
+                                                aria-controls="faq-collapse-1">
+                                            <span>Can I try Orions before I buy?</span>
+                                        </button>
+                                    </div>
+                                    <div id="faq-collapse-1"
+                                         class="accordion-collapse collapse"
+                                         aria-labelledby="faq-1"
+                                         data-bs-parent="#faq-accordion">
+                                        <div class="accordion-body">
+                                            <p>Prepare questions that the patient should answer when registering for an
+                                                online there consultation. We will send them to him before the visit in
+                                                the form of survey to which he will also be able to attach his research
+                                                results.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {# item 2 #}
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-2">
+                                        <button class="accordion-button"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#faq-collapse-2"
+                                                aria-expanded="true"
+                                                aria-controls="faq-collapse-2">
+                                            <span>What's your cancellation policy?</span>
+                                        </button>
+                                    </div>
+                                    <div id="faq-collapse-2"
+                                         class="accordion-collapse collapse show"
+                                         aria-labelledby="faq-2"
+                                         data-bs-parent="#faq-accordion">
+                                        <div class="accordion-body">
+                                            <p>Prepare questions that the patient should answer when registering for an
+                                                online there consultation. We will send them to him before the visit in
+                                                the form of survey to which he will also be able to attach his research
+                                                results.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {# item 3 #}
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-3">
+                                        <button class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#faq-collapse-3"
+                                                aria-expanded="true"
+                                                aria-controls="faq-collapse-3">
+                                            <span>Do I need my own Apple Developer account?</span>
+                                        </button>
+                                    </div>
+                                    <div id="faq-collapse-3"
+                                         class="accordion-collapse collapse"
+                                         aria-labelledby="faq-3"
+                                         data-bs-parent="#faq-accordion">
+                                        <div class="accordion-body">
+                                            <p>Prepare questions that the patient should answer when registering for an
+                                                online there consultation. We will send them to him before the visit in
+                                                the form of survey to which he will also be able to attach his research
+                                                results.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {# item 4 #}
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-4">
+                                        <button class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#faq-collapse-4"
+                                                aria-expanded="true"
+                                                aria-controls="faq-collapse-4">
+                                            <span>Is there Orions branding in my app?</span>
+                                        </button>
+                                    </div>
+                                    <div id="faq-collapse-4"
+                                         class="accordion-collapse collapse"
+                                         aria-labelledby="faq-4"
+                                         data-bs-parent="#faq-accordion">
+                                        <div class="accordion-body">
+                                            <p>Prepare questions that the patient should answer when registering for an
+                                                online there consultation. We will send them to him before the visit in
+                                                the form of survey to which he will also be able to attach his research
+                                                results.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {# item 5 #}
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-5">
+                                        <button class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#faq-collapse-5"
+                                                aria-expanded="true"
+                                                aria-controls="faq-collapse-5">
+                                            <span>Can I preview before I publish?</span>
+                                        </button>
+                                    </div>
+                                    <div id="faq-collapse-5"
+                                         class="accordion-collapse collapse"
+                                         aria-labelledby="faq-5"
+                                         data-bs-parent="#faq-accordion">
+                                        <div class="accordion-body">
+                                            <p>Prepare questions that the patient should answer when registering for an
+                                                online there consultation. We will send them to him before the visit in
+                                                the form of survey to which he will also be able to attach his research
+                                                results.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div> {# .faq #}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# faq section - end #}
+
+{% endblock %}

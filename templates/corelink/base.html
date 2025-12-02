@@ -82,7 +82,34 @@
                 <div class="navigation-inner">
                     <div class="navigation-logo">
                         <a href="{% url 'index' %}">
-                            <img src="{% static 'corelink/assets/images/corelink-logo.svg' %}" alt="CoreLink" width="160" height="40">
+                            <svg width="320" height="80" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="cl-grad" x1="0" y1="0" x2="0" y2="80" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#FF5EDB"/>
+                                    <stop offset="1" stop-color="#6C5CFF"/>
+                                    </linearGradient>
+                                </defs>
+
+                                <!-- Иконка -->
+                                <g transform="translate(10,10)">
+                                    <!-- Внешний круг -->
+                                    <circle cx="30" cy="30" r="26" stroke="url(#cl-grad)" stroke-width="8" fill="none" />
+                                    <!-- Внутренняя "звезда" (ромб) -->
+                                    <rect x="22" y="22" width="16" height="16" rx="5"
+                                        fill="#FF89E5"
+                                        transform="rotate(45 30 30)" />
+                                </g>
+
+                                <!-- Текст CoreLink -->
+                                <text x="80" y="48"
+                                        font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+                                        font-size="32"
+                                        font-weight="600"
+                                        fill="#4338CA">
+                                    CoreLink
+                                </text>
+                                </svg>
+
                         </a>
                     </div>
                     <div class="navigation-menu">

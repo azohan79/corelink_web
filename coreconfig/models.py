@@ -91,3 +91,42 @@ class BlogPost(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+
+class Feature(models.Model):
+    title = models.CharField("Título", max_length=200)
+    slug = models.SlugField(
+        "Slug",
+        max_length=220,
+        unique=True,
+        help_text="URL único: se genera automáticamente del título"
+    )
+    short_description = models.CharField(
+        "Meta descripción",
+        max_length=160,
+        blank=True,
+        help_text="Breve descripción para SEO (máx. 160 caracteres)",
+    )
+    content = models.TextField("Contenido")
+    icon_class = models.CharField(
+        "CSS Icon Class",
+        max_length=100,
+        default="las la-cog",
+        blank=True,
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["created_at"]
+        verbose_name = "Funcionalidad"
+        verbose_name_plural = "Funcionalidades"
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("feature_detail", kwargs={"slug": self.slug})
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)

@@ -1,6 +1,23 @@
 {% extends "corelink/base.html" %}
 {% load static i18n %}
 
+{% block meta_title %}
+<title>{{ post.title }} — CoreLink</title>
+{% endblock %}
+
+{% block meta_description %}
+{% if post.short_description %}
+<meta name="description" content="{{ post.short_description }}">
+{% else %}
+<meta name="description" content="{{ post.content|striptags|truncatechars:160 }}">
+{% endif %}
+{% endblock %}
+
+{% block meta_keywords %}
+<meta name="keywords" content="IoT, CoreLink, blog, tecnología, automatización">
+{% endblock %}
+
+
 {% block content %}
 
     <!-- page header - start -->

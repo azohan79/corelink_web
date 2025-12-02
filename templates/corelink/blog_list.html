@@ -1,6 +1,19 @@
 {% extends "corelink/base.html" %}
 {% load static i18n %}
 
+{% block meta_title %}
+<title>{% trans "Blog — Noticias y actualizaciones de CoreLink" %}</title>
+{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="{% trans 'Últimas noticias sobre IoT, automatización, estaciones inteligentes y tecnología CoreLink.' %}">
+{% endblock %}
+
+{% block meta_keywords %}
+<meta name="keywords" content="blog IoT, noticias IoT, CoreLink blog, tecnología, automatización">
+{% endblock %}
+
+
 {% block content %}
 
     <!-- page header - start -->

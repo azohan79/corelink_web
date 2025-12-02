@@ -1,6 +1,18 @@
 {% extends "corelink/base.html" %}
 {% load static i18n %}
 
+{% block meta_title %}
+<title>{% trans "Contáctanos — CoreLink" %}</title>
+{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="{% trans 'Ponte en contacto con nuestro equipo para soluciones IoT inteligentes.' %}">
+{% endblock %}
+
+{% block meta_keywords %}
+<meta name="keywords" content="contacto CoreLink, soporte IoT, estaciones inteligentes">
+{% endblock %}
+
 {% block content %}
 
     <div class="page-header">

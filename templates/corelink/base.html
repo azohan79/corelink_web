@@ -1,6 +1,6 @@
 {% load static i18n %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ request.LANGUAGE_CODE }}">
 <head>
     <!-- meta tags -->
     <meta charset="UTF-8">
@@ -8,10 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- title -->
-    <title>{% block title %}CoreLink – IoT Control Platform{% endblock %}</title>
+    <title>{% block title %}{% trans "CoreLink — plataforma de automatización IoT" %}{% endblock %}</title>
 
-    <!-- favicon -->
-    <!-- Основной favicon (SVG) -->
+
+    {% block meta_title %}
+    <title>{% trans "CoreLink — Plataforma IoT inteligente" %}</title>
+    {% endblock meta_title %}
+
+    {% block meta_description %}
+    <meta name="description" content="{% trans 'Automatización IoT en tiempo real para estaciones, dispositivos y sensores.' %}">
+    {% endblock meta_description %}
+
+    {% block meta_keywords %}
+    <meta name="keywords" content="IoT, CoreLink, automatización, estaciones inteligentes, control remoto, telemetría">
+    {% endblock meta_keywords %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     <link rel="icon" type="image/png" href="{% static 'corelink/assets/images/favicon/favicon-96x96.png' %}" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="{% static 'corelink/assets/images/favicon/favicon.svg' %}" />
@@ -32,6 +45,15 @@
     <link rel="stylesheet" href="{% static 'corelink/assets/css/swiper-bundle.min.css' %}">
     <link rel="stylesheet" href="{% static 'corelink/assets/css/style.css' %}">
     {% block extra_head %}{% endblock %}
+
+    {% block og_tags %}
+    <meta property="og:title" content="CoreLink — IoT Automation Platform">
+    <meta property="og:description" content="CoreLink: Plataforma de control IoT en tiempo real.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:image" content="{{ STATIC_URL }}corelink/img/og-default.jpg">
+    {% endblock %}
+
 </head>
 <body>
 
@@ -177,8 +199,7 @@
                                 <a href="{% url 'index' %}">
                                     <img src="{% static 'corelink/assets/images/logo.png' %}" alt="footer-logo">
                                 </a>
-                                <p class="c-grey-1">CoreLink is an IoT control & automation platform for real-time
-                                    device management and telemetry.</p>
+                                <p class="c-grey-1">{% trans "CoreLink es una plataforma de control y automatización IoT para la gestión de dispositivos y telemetría en tiempo real" %}.</p>
                                 <div class="links">
                                     <a class="link-underline" href="mailto:hello@corelink.es">
                                         <span>hello@corelink.es</span>
@@ -198,13 +219,13 @@
                                                 </a>
                                             </li>
                                         {% empty %}
-                                            <li><span>No social links yet</span></li>
+                                            <li><span>{% trans "Aún no hay enlaces a redes sociales" %}</span></li>
                                         {% endfor %}
                                     </ul>
                                 </div>
 
                                 <div class="footer-list">
-                                    <h6>Menu</h6>
+                                    <h6>{% trans "Menú" %}</h6>
                                     <ul>
                                         {% for item in footer_menu_1 %}
                                             <li>
@@ -216,7 +237,7 @@
                                     </ul>
                                 </div>
                                     <div class="footer-list">
-                                        <h6>Explore</h6>
+                                        <h6>{% trans "Explorar" %}</h6>
                                         <ul>
                                             {% for item in footer_menu_2 %}
                                                 <li>

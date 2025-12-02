@@ -3,6 +3,27 @@
 
 {% block title %}Feature Detail · CoreLink{% endblock %}
 
+{% block meta_title %}
+<title>{{ feature.title }} — CoreLink</title>
+{% endblock %}
+
+{% block meta_description %}
+{% if feature.short_description %}
+<meta name="description" content="{{ feature.short_description }}">
+{% else %}
+<meta name="description" content="{{ feature.content|striptags|truncatechars:160 }}">
+{% endif %}
+{% endblock %}
+
+{% block meta_keywords %}
+<meta name="keywords" content="CoreLink, IoT, feature, plataforma IoT, automatización, tecnología">
+{% endblock %}
+
+{% block canonical %}
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+{% endblock %}
+
+
 {% block content %}
 
     <!-- page header - start -->

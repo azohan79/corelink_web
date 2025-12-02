@@ -11,9 +11,17 @@
     <title>{% block title %}CoreLink – IoT Control Platform{% endblock %}</title>
 
     <!-- favicon -->
+    <!-- Основной favicon (SVG) -->
+    <link rel="icon" type="image/svg+xml" href="{% static 'corelink/assets/images/favicon/corelink-icon.svg' %}">
+
+    <!-- PNG fallback for Safari & legacy browsers -->
+    <link rel="alternate icon" type="image/png" sizes="32x32" href="{% static 'corelink/assets/images/favicon/favicon-32x32.png' %}">
+    <link rel="alternate icon" type="image/png" sizes="16x16" href="{% static 'corelink/assets/images/favicon/favicon-16x16.png' %}">
+
+    <!-- iOS Web App Icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'corelink/assets/images/favicon/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'corelink/assets/images/favicon/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'corelink/assets/images/favicon/favicon-16x16.png' %}">
+
+    <!-- PWA manifest -->
     <link rel="manifest" href="{% static 'corelink/assets/images/favicon/site.webmanifest' %}">
 
     <!-- stylesheets -->
@@ -74,14 +82,14 @@
                 <div class="navigation-inner">
                     <div class="navigation-logo">
                         <a href="{% url 'index' %}">
-                            <img src="{% static 'corelink/assets/images/logo.png' %}" alt="corelink-logo">
+                            <img src="{% static 'corelink/assets/images/corelink-logo.svg' %}" alt="CoreLink" width="160" height="40">
                         </a>
                     </div>
                     <div class="navigation-menu">
                         <div class="mobile-header">
                             <div class="logo">
                                 <a href="{% url 'index' %}">
-                                    <img src="{% static 'corelink/assets/images/logo-white.png' %}" alt="image">
+                                    <img src="{% static 'corelink/assets/images/corelink-logo.svg' %}" alt="image">
                                 </a>
                             </div>
                             <ul>

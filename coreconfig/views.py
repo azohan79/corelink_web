@@ -1,7 +1,10 @@
-from django.shortcuts import render
+# coreconfig/views.py
+
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
 from django.db.models import Q
-#from .models import BlogPost
+
+from .models import BlogPost
 
 
 def index(request):
@@ -11,19 +14,33 @@ def index(request):
     """
     return render(request, "corelink/index.html")
 
+
 def about(request):
+    """
+    Страница About.
+    """
     return render(request, "corelink/about.html")
 
 
-def features(request):
+def features_list(request):
+    """
+    Страница Features (список).
+    Пока статичная вёрстка.
+    """
     return render(request, "corelink/features.html")
 
 
-def feature_detail(request):
+def feature_detail(request, slug=None):
+    """
+    Детальная страница фичи (пока статичная заглушка).
+    """
     return render(request, "corelink/feature_detail.html")
 
 
 class BlogPostListView(ListView):
+    """
+    Список постов блога.
+    """
     model = BlogPost
     template_name = "corelink/blog_list.html"
     context_object_name = "posts"
@@ -34,14 +51,17 @@ class BlogPostListView(ListView):
         q = self.request.GET.get("q")
         if q:
             qs = qs.filter(
-                Q(title__icontains=q) |
-                Q(excerpt__icontains=q) |
-                Q(content__icontains=q)
+                Q(title__icontains=q)
+                | Q(excerpt__icontains=q)
+                | Q(content__icontains=q)
             )
         return qs
 
 
 class BlogPostDetailView(DetailView):
+    """
+    Детальная страница поста блога.
+    """
     model = BlogPost
     template_name = "corelink/blog_detail.html"
     context_object_name = "post"

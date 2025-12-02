@@ -1,13 +1,15 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from coreconfig import views as core_views
 
-from coreconfig import views as core_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    
+    # смена языка
+    path("i18n/", include("django.conf.urls.i18n")),
 
     # основные страницы
     path("", core_views.index, name="index"),

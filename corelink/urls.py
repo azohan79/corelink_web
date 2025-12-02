@@ -11,6 +11,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name="index"),
     path("about/", views.about, name="about"),
+    path('features/', views.features, name='features'),
+    path('feature-detail/', views.feature_detail, name='feature_detail'),
 ]
 
 if settings.DEBUG:

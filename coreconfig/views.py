@@ -12,3 +12,11 @@ def about(request):
     return render(request, "corelink/about.html")
 
 
+def features(request):
+    return render(request, "corelink/features.html")
+
+
+def feature_detail(request):
+    return render(request, "corelink/feature_detail.html")
+
+

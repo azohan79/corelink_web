@@ -1,0 +1,151 @@
+{% extends "corelink/base.html" %}
+{% load static %}
+
+{% block title %}Features · CoreLink{% endblock %}
+
+{% block content %}
+
+    <!-- page header - start -->
+    <div class="page-header">
+        <div class="page-header-wrapper">
+            <div class="page-header-inner">
+                <div class="container">
+                    <div class="row d-lg-flex align-items-lg-end">
+                        <div class="col-lg-6">
+                            <div class="page-header-content c-white">
+                                <h1>Features.</h1>
+                                <ul>
+                                    <li>
+                                        <a href="{% url 'index' %}" class="link-underline">
+                                            <span>Home</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <i class="las la-angle-right"></i>
+                                        <a href="{% url 'features' %}" class="link-underline">
+                                            <span>Features</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="page-header-search">
+                                <form>
+                                    <input type="text" placeholder="Search">
+                                    <button type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="background-pattern background-pattern-2">
+                <div class="background-pattern-img background-loop"
+                     style="background-image: url({% static 'corelink/assets/images/patterns/pattern.jpg' %});"></div>
+                <div class="background-pattern-gradient"></div>
+                <div class="background-pattern-bottom">
+                    <div class="image"
+                         style="background-image: url({% static 'corelink/assets/images/patterns/pattern-2.jpg' %});"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- page header - end -->
+
+    <!-- app features wide section - start -->
+    <div class="app-feature app-feature-2">
+        <div class="app-feature-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 offset-lg-0 col-10 offset-1">
+                        <div class="section-heading center width-64">
+                            <div class="sub-heading c-blue upper ls-1">
+                                <i class="las la-cog"></i>
+                                <h5>app features</h5>
+                            </div>
+                            <div class="main-heading c-dark">
+                                <h1>Get surprised by amazing features.</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row gx-5 gy-5">
+                    <!-- feature card 1 -->
+                    <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-0 col-10 offset-1">
+                        <div class="app-feature-single app-feature-single-2">
+                            <div class="app-feature-single-wrapper">
+                                <a href="{% url 'coreconfig:feature_detail' %}" class="icon">
+                                    <i class="las la-comments"></i>
+                                </a>
+                                <a href="{% url 'coreconfig:feature_detail' %}">
+                                    <h3 class="c-dark">Easy to Use</h3>
+                                </a>
+                                <p class="c-grey">
+                                    Heat multiply is second divided fowl there isn't man cattle they wherein lights greater
+                                    concern open days tree is brought.
+                                </p>
+                            </div>
+                            <a href="{% url 'coreconfig:feature_detail' %}" class="circle">
+                                <i class="las la-plus"></i>
+                                <i class="las la-angle-right hover"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- feature card 2 -->
+                    <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-0 col-10 offset-1">
+                        <div class="app-feature-single app-feature-single-2">
+                            <div class="app-feature-single-wrapper">
+                                <a href="{% url 'coreconfig:feature_detail' %}" class="icon">
+                                    <i class="las la-headset"></i>
+                                </a>
+                                <a href="{% url 'coreconfig:feature_detail' %}">
+                                    <h3 class="c-dark">Made for Everyone</h3>
+                                </a>
+                                <p class="c-grey">
+                                    Heat multiply is second divided fowl there isn't man cattle they wherein lights greater
+                                    concern open days tree is brought.
+                                </p>
+                            </div>
+                            <a href="{% url 'coreconfig:feature_detail' %}" class="circle">
+                                <i class="las la-plus"></i>
+                                <i class="las la-angle-right hover"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- feature card 3 -->
+                    <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-0 col-10 offset-1">
+                        <div class="app-feature-single app-feature-single-2">
+                            <div class="app-feature-single-wrapper">
+                                <a href="{% url 'coreconfig:feature_detail' %}" class="icon">
+                                    <i class="las la-photo-video"></i>
+                                </a>
+                                <a href="{% url 'coreconfig:feature_detail' %}">
+                                    <h3 class="c-dark">Share Everything</h3>
+                                </a>
+                                <p class="c-grey">
+                                    Heat multiply is second divided fowl there isn't man cattle they wherein lights greater
+                                    concern open days tree is brought.
+                                </p>
+                            </div>
+                            <a href="{% url 'coreconfig:feature_detail' %}" class="circle">
+                                <i class="las la-plus"></i>
+                                <i class="las la-angle-right hover"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- тут при желании можешь добавить остальные карточки из оригинального шаблона -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- app features wide section - end -->
+
+{% endblock %}

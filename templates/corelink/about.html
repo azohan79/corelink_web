@@ -1,0 +1,563 @@
+{% extends "corelink/base.html" %}
+{% load static %}
+
+{% block title %}About — CoreLink{% endblock %}
+
+{% block content %}
+
+    <!-- page header - start -->
+    <div class="page-header">
+        <div class="page-header-wrapper">
+            <div class="page-header-inner">
+                <div class="container">
+                    <div class="row d-lg-flex align-items-lg-end">
+                        <div class="col-lg-6">
+                            <div class="page-header-content c-white">
+                                <h1>About Us</h1>
+                                <ul>
+                                    <li>
+                                        <a href="{% url 'corelink:index' %}" class="link-underline">
+                                            <span>Home</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <i class="las la-angle-right"></i>
+                                        <a href="{% url 'corelink:about' %}" class="link-underline">
+                                            <span>About</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="page-header-search">
+                                <form>
+                                    <input type="text" placeholder="Search">
+                                    <button type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="background-pattern background-pattern-2">
+                <div class="background-pattern-img background-loop"
+                     style="background-image: url({% static 'corelink/assets/images/patterns/pattern.jpg' %});"></div>
+                <div class="background-pattern-gradient"></div>
+                <div class="background-pattern-bottom">
+                    <div class="image"
+                         style="background-image: url({% static 'corelink/assets/images/patterns/pattern-2.jpg' %});"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- page header - end -->
+
+    <!-- about section - start -->
+    <div class="about-section">
+        <div class="about-section-wrapper">
+            <div class="container">
+                <!-- first half - start -->
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-0 order-lg-1 col-md-8 offset-md-2 col-10 offset-1 order-2">
+                        <div class="about-section-content c-grey">
+                            <div class="section-heading">
+                                <div class="sub-heading c-blue upper ls-1">
+                                    <i class="las la-user-circle"></i>
+                                    <h5>introduction</h5>
+                                </div>
+                                <div class="main-heading c-dark">
+                                    <h1>A little about our company.</h1>
+                                </div>
+                            </div>
+                            <p class="paragraph-big">
+                                Bring all creature seas blessed whales were earth wherein evening dry one. Morning unto
+                                fly midst living so shall fish multiply meat day.
+                            </p>
+                            <p>
+                                There grass said shall won't thing moved shall sea all male two is. Fowl man sixth
+                                gathering heaven was brought air fill dry further abundantly them be from won't every
+                                have cattle darkness moveth every the darkness may which evening she'd thing own man is
+                                there said gathering be the in lesser called.
+                            </p>
+                            <p>
+                                Our, that subdue open above creature i forth make and third beast bring had creeping
+                                stars brought together. Creepeth creature by open us our appear creeping bring they're
+                                days.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 offset-lg-0 order-lg-2 col-md-8 offset-md-2 col-10 offset-1 order-1">
+                        <div class="about-section-image">
+                            <div class="pattern-image pattern-image-1">
+                                <div class="pattern-image-wrapper">
+                                    <img class="drop-shadow-1"
+                                         src="{% static 'corelink/assets/images/about-image-1.jpg' %}" alt="image">
+                                    <div class="background-pattern background-pattern-radius drop-shadow-1">
+                                        <div class="background-pattern-img background-loop"
+                                             style="background-image: url({% static 'corelink/assets/images/patterns/pattern.jpg' %});"></div>
+                                        <div class="background-pattern-gradient"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- first half - end -->
+
+                <!-- second half - start -->
+                <div class="row">
+                    <div class="col-lg-12 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                        <h3 class="c-dark second-half-heading">Why we are different.</h3>
+                    </div>
+                </div>
+                <div class="row gx-5 about-row">
+                    <div class="col-lg-4 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                        <div class="app-feature-single app-feature-single-1">
+                            <div class="app-feature-single-wrapper">
+                                <a href="#" class="icon">
+                                    <i class="las la-server"></i>
+                                </a>
+                                <a href="#">
+                                    <h3 class="c-dark">Unlimited Storage</h3>
+                                </a>
+                                <p class="c-grey">
+                                    Heat multiply is second divided fowl there isn't man cattle they wherein lights
+                                    greater concern open days tree is brought.
+                                </p>
+                            </div>
+                            <a href="#" class="circle">
+                                <i class="las la-plus"></i>
+                                <i class="las la-angle-right hover"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                        <div class="app-feature-single app-feature-single-1">
+                            <div class="app-feature-single-wrapper">
+                                <a href="#" class="icon">
+                                    <i class="las la-user-lock"></i>
+                                </a>
+                                <a href="#">
+                                    <h3 class="c-dark">Data Protection</h3>
+                                </a>
+                                <p class="c-grey">
+                                    Heat multiply is second divided fowl there isn't man cattle they wherein lights
+                                    greater concern open days tree is brought.
+                                </p>
+                            </div>
+                            <a href="#" class="circle">
+                                <i class="las la-plus"></i>
+                                <i class="las la-angle-right hover"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                        <div class="app-feature-single app-feature-single-1">
+                            <div class="app-feature-single-wrapper">
+                                <a href="#" class="icon">
+                                    <i class="las la-map-marked-alt"></i>
+                                </a>
+                                <a href="#">
+                                    <h3 class="c-dark">Use from Anywhere</h3>
+                                </a>
+                                <p class="c-grey">
+                                    Heat multiply is second divided fowl there isn't man cattle they wherein lights
+                                    greater concern open days tree is brought.
+                                </p>
+                            </div>
+                            <a href="#" class="circle">
+                                <i class="las la-plus"></i>
+                                <i class="las la-angle-right hover"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- second half - end -->
+            </div>
+        </div>
+    </div>
+    <!-- about section - end -->
+
+    <!-- team section - start -->
+    <div class="team">
+        <div class="team-wrapper">
+            <div class="team-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="section-heading center c-white">
+                                <div class="sub-heading upper ls-1">
+                                    <i class="las la-tags"></i>
+                                    <h5>our team</h5>
+                                </div>
+                                <div class="main-heading">
+                                    <h1>Meet the creatives.</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container team-slider-container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="team-slider">
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <!-- slide 1 -->
+                                        <div class="swiper-slide">
+                                            <div class="team-single drop-shadow-team-1">
+                                                <div class="team-single-wrapper">
+                                                    <div class="image">
+                                                        <div class="image-wrapper">
+                                                            <div class="image-inner">
+                                                                <img src="{% static 'corelink/assets/images/testimonial-slide-img-3.png' %}" alt="team-member">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <h3>Anna Adams</h3>
+                                                    <p>Marketing</p>
+                                                    <div class="social social-1">
+                                                        <ul>
+                                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- slide 2 -->
+                                        <div class="swiper-slide">
+                                            <div class="team-single drop-shadow-team-2">
+                                                <div class="team-single-wrapper">
+                                                    <div class="image">
+                                                        <div class="image-wrapper">
+                                                            <div class="image-inner">
+                                                                <img src="{% static 'corelink/assets/images/testimonial-slide-img-2.png' %}" alt="team-member">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <h3>Jake Blake</h3>
+                                                    <p>Development</p>
+                                                    <div class="social social-2">
+                                                        <ul>
+                                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- slide 3 -->
+                                        <div class="swiper-slide">
+                                            <div class="team-single drop-shadow-team-3">
+                                                <div class="team-single-wrapper">
+                                                    <div class="image">
+                                                        <div class="image-wrapper">
+                                                            <div class="image-inner">
+                                                                <img src="{% static 'corelink/assets/images/testimonial-slide-img-1.png' %}" alt="team-member">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <h3>Karen Gavin</h3>
+                                                    <p>Manager</p>
+                                                    <div class="social social-3">
+                                                        <ul>
+                                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /slides -->
+                                    </div>
+                                </div>
+                                <div class="team-slider-navigation slider-navigation">
+                                    <div class="team-slider-navigation-prev">
+                                        <i class="las la-long-arrow-alt-left"></i>
+                                    </div>
+                                    <div class="team-slider-navigation-next">
+                                        <i class="las la-long-arrow-alt-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="background-pattern background-pattern-1">
+                <div class="background-pattern-img background-loop"
+                     style="background-image: url({% static 'corelink/assets/images/patterns/pattern.jpg' %});"></div>
+                <div class="background-pattern-gradient"></div>
+                <div class="background-pattern-bottom">
+                    <div class="image"
+                         style="background-image: url({% static 'corelink/assets/images/patterns/pattern-1.jpg' %});"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- team section - end -->
+
+    <!-- testimonial section - start -->
+    <div class="testimonial-section">
+        <div class="testimonial-section-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                        <div class="section-heading center width-55">
+                            <div class="sub-heading c-blue upper ls-1">
+                                <i class="las la-comments"></i>
+                                <h5>feedbacks</h5>
+                            </div>
+                            <div class="main-heading c-dark">
+                                <h1>What people are talking about.</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="testimonial-slider">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="testimonial-slide">
+                                        <div class="image">
+                                            <div class="image-wrapper">
+                                                <div class="image-inner">
+                                                    <img src="{% static 'corelink/assets/images/testimonial-slide-img-2.png' %}" alt="testimony-image">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p>“This app is wonderful dry male ceepeth good them their in which to days two deep has yielding throw darkness bring likeness fifth by darkness make face saw has under heaven forth saw there without lights app stars for him replenish fowl creature.”</p>
+                                            <h5>— Jack William</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="testimonial-slide">
+                                        <div class="image">
+                                            <div class="image-wrapper">
+                                                <div class="image-inner">
+                                                    <img src="{% static 'corelink/assets/images/testimonial-slide-img-1.png' %}" alt="testimony-image">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p>“This app is wonderful dry male ceepeth good them their in which to days two deep has yielding throw darkness bring likeness fifth by darkness make face saw has under heaven forth saw there without lights app stars for him replenish fowl creature.”</p>
+                                            <h5>— Jack William</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="testimonial-slide">
+                                        <div class="image">
+                                            <div class="image-wrapper">
+                                                <div class="image-inner">
+                                                    <img src="{% static 'corelink/assets/images/testimonial-slide-img-3.png' %}" alt="testimony-image">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <p>“This app is wonderful dry male ceepeth good them their in which to days two deep has yielding throw darkness bring likeness fifth by darkness make face saw has under heaven forth saw there without lights app stars for him replenish fowl creature.”</p>
+                                            <h5>— Jack William</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- swiper-wrapper -->
+                        </div> <!-- swiper-container -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- testimonial section - end -->
+
+    <!-- faq section - start -->
+    <div class="faq-section faq-section-1">
+        <div class="faq-section-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-10 offset-xxl-1 col-lg-12 offset-lg-0 col-10 offset-1">
+                        <div class="section-heading center width-64">
+                            <div class="sub-heading c-blue upper ls-1">
+                                <i class="las la-file-alt"></i>
+                                <h5>discover</h5>
+                            </div>
+                            <div class="main-heading c-dark">
+                                <h1>Some frequently asked questions</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-9 col-md-8 col-10">
+                        <div class="faq-wrapper">
+                            <div class="faq" id="faq-accordion">
+                                <!-- item 1 -->
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-1">
+                                        <button class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#faq-collapse-1"
+                                                aria-expanded="true"
+                                                aria-controls="faq-collapse-1">
+                                            <span>Can I try Orions before I buy?</span>
+                                        </button>
+                                    </div>
+                                    <div id="faq-collapse-1"
+                                         class="accordion-collapse collapse"
+                                         aria-labelledby="faq-1"
+                                         data-bs-parent="#faq-accordion">
+                                        <div class="accordion-body">
+                                            <p>Prepare questions that the patient should answer when registering for an online
+                                                there consultation. We will send them to him before the visit in the form of survey
+                                                to which he will also be able to attach his research results.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- item 2 -->
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-2">
+                                        <button class="accordion-button"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#faq-collapse-2"
+                                                aria-expanded="true"
+                                                aria-controls="faq-collapse-2">
+                                            <span>What's your cancellation policy?</span>
+                                        </button>
+                                    </div>
+                                    <div id="faq-collapse-2"
+                                         class="accordion-collapse collapse show"
+                                         aria-labelledby="faq-2"
+                                         data-bs-parent="#faq-accordion">
+                                        <div class="accordion-body">
+                                            <p>Prepare questions that the patient should answer when registering for an online
+                                                there consultation. We will send them to him before the visit in the form of survey
+                                                to which he will also be able to attach his research results.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- item 3 -->
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-3">
+                                        <button class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#faq-collapse-3"
+                                                aria-expanded="true"
+                                                aria-controls="faq-collapse-3">
+                                            <span>Do I need my own Apple Developer account?</span>
+                                        </button>
+                                    </div>
+                                    <div id="faq-collapse-3"
+                                         class="accordion-collapse collapse"
+                                         aria-labelledby="faq-3"
+                                         data-bs-parent="#faq-accordion">
+                                        <div class="accordion-body">
+                                            <p>Prepare questions that the patient should answer when registering for an online
+                                                there consultation. We will send them to him before the visit in the form of survey
+                                                to which he will also be able to attach his research results.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- item 4 -->
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-4">
+                                        <button class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#faq-collapse-4"
+                                                aria-expanded="true"
+                                                aria-controls="faq-collapse-4">
+                                            <span>Is there Orions branding in my app?</span>
+                                        </button>
+                                    </div>
+                                    <div id="faq-collapse-4"
+                                         class="accordion-collapse collapse"
+                                         aria-labelledby="faq-4"
+                                         data-bs-parent="#faq-accordion">
+                                        <div class="accordion-body">
+                                            <p>Prepare questions that the patient should answer when registering for an online
+                                                there consultation. We will send them to him before the visit in the form of survey
+                                                to which he will also be able to attach his research results.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- item 5 -->
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="faq-5">
+                                        <button class="accordion-button collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#faq-collapse-5"
+                                                aria-expanded="true"
+                                                aria-controls="faq-collapse-5">
+                                            <span>Can I preview before I publish?</span>
+                                        </button>
+                                    </div>
+                                    <div id="faq-collapse-5"
+                                         class="accordion-collapse collapse"
+                                         aria-labelledby="faq-5"
+                                         data-bs-parent="#faq-accordion">
+                                        <div class="accordion-body">
+                                            <p>Prepare questions that the patient should answer when registering for an online
+                                                there consultation. We will send them to him before the visit in the form of survey
+                                                to which he will also be able to attach his research results.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /items -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- instagram - start -->
+    <div class="instagram">
+        <div class="instagram-wrapper">
+            <div class="instagram-slider">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        {% for i in "123456" %}
+                            <div class="swiper-slide">
+                                <div class="instagram-slide">
+                                    <img src="{% static 'corelink/assets/images/instagram/instagram-img-'|add:forloop.counter|stringformat:'d'|add:'.jpg' %}"
+                                         alt="instagram-slide-image">
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <a href="#" class="button button-premium">
+                    <div class="button-inner">
+                        <div class="button-content">
+                            <i class="fab fa-instagram"></i>
+                            <h4>Follow us on Instagram</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- instagram - end -->
+
+{% endblock %}

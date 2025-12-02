@@ -8,4 +8,7 @@ def index(request):
     """
     return render(request, "corelink/index.html")
 
+def about(request):
+    return render(request, "corelink/about.html")
+
 

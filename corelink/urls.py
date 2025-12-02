@@ -5,9 +5,12 @@ from django.conf.urls.static import static
 
 from coreconfig import views
 
+app_name = "corelink"
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name="index"),
+    path("about/", views.about, name="about"),
 ]
 
 if settings.DEBUG:

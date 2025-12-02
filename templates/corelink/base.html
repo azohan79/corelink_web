@@ -90,48 +90,32 @@
                                 </li>
                             </ul>
                         </div>
-                        <ul class="parent">
-                            <li>
-                                <a href="{% url 'index' %}" class="link-underline link-underline-1">
-                                    <span>Home</span>
-                                </a>
-                            </li>
-                            <!-- TODO: заменить на реальные url-ы, когда появятся страницы -->
-                            <li class="has-child">
-                                <a href="#" class="link-underline link-underline-1">
-                                    <span>About</span>
-                                </a>
-                            </li>
-                            <li class="has-child">
-                                <a href="#" class="link-underline link-underline-1">
-                                    <span>Features</span>
-                                </a>
-                            </li>
-                            <li class="has-child">
-                                <a href="#" class="link-underline link-underline-1">
-                                    <span>Blog</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="link-underline link-underline-1">
-                                    <span>Pricing</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="link-underline link-underline-1">
-                                    <span>Contact</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="social">
-                            <h6>Follow</h6>
-                            <ul>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            <ul class="parent">
+                                {% for item in header_menu %}
+                                    <li>
+                                        <a href="{{ item.url }}" class="link-underline link-underline-1">
+                                            <span>{{ item.title }}</span>
+                                        </a>
+                                    </li>
+                                {% endfor %}
                             </ul>
-                        </div>
+                                <div class="social">
+                                    <h6>Follow</h6>
+                                    <ul>
+                                        {% for item in footer_social_menu %}
+                                            <li>
+                                                <a href="{{ item.url }}" target="_blank" rel="noopener">
+                                                    {% if item.icon_class %}
+                                                        <i class="{{ item.icon_class }}"></i>
+                                                    {% else %}
+                                                        {{ item.title }}
+                                                    {% endif %}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+
                         <div class="background-pattern">
                             <div class="background-pattern-img background-loop"
                                  style="background-image: url({% static 'corelink/assets/images/patterns/pattern.jpg' %});"></div>
@@ -170,53 +154,49 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="footer-list footer-social social-gradient">
-                                <h6>Follow</h6>
-                                <ul>
-                                    <li class="twitter">
-                                        <a href="#" class="link-underline">
-                                            <i class="fab fa-twitter"></i>
-                                            <span>Twitter</span>
-                                        </a>
-                                    </li>
-                                    <li class="facebook">
-                                        <a href="#" class="link-underline">
-                                            <i class="fab fa-facebook"></i>
-                                            <span>Facebook</span>
-                                        </a>
-                                    </li>
-                                    <li class="linkedin">
-                                        <a href="#" class="link-underline">
-                                            <i class="fab fa-linkedin-in"></i>
-                                            <span>LinkedIn</span>
-                                        </a>
-                                    </li>
-                                    <li class="youtube">
-                                        <a href="#" class="link-underline">
-                                            <i class="fab fa-youtube"></i>
-                                            <span>YouTube</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="footer-list">
-                                <h6>Menu</h6>
-                                <ul>
-                                    <li><a href="#" class="link-underline"><span>About</span></a></li>
-                                    <li><a href="#" class="link-underline"><span>Features</span></a></li>
-                                    <li><a href="#" class="link-underline"><span>Blog</span></a></li>
-                                    <li><a href="#" class="link-underline"><span>Contact</span></a></li>
-                                </ul>
-                            </div>
-                            <div class="footer-list">
-                                <h6>Explore</h6>
-                                <ul>
-                                    <li><a href="#" class="link-underline"><span>Pricing</span></a></li>
-                                    <li><a href="#" class="link-underline"><span>Terms of Service</span></a></li>
-                                    <li><a href="#" class="link-underline"><span>Privacy Policy</span></a></li>
-                                    <li><a href="#" class="link-underline"><span>Help Center</span></a></li>
-                                </ul>
-                            </div>
+                                <div class="footer-list footer-social social-gradient">
+                                    <h6>Follow</h6>
+                                    <ul>
+                                        {% for item in footer_social_menu %}
+                                            <li class="{{ item.title|lower }}">
+                                                <a href="{{ item.url }}" class="link-underline" target="_blank" rel="noopener">
+                                                    {% if item.icon_class %}
+                                                        <i class="{{ item.icon_class }}"></i>
+                                                    {% endif %}
+                                                    <span>{{ item.title }}</span>
+                                                </a>
+                                            </li>
+                                        {% empty %}
+                                            <li><span>No social links yet</span></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+
+                                <div class="footer-list">
+                                    <h6>Menu</h6>
+                                    <ul>
+                                        {% for item in footer_menu_1 %}
+                                            <li>
+                                                <a href="{{ item.url }}" class="link-underline">
+                                                    <span>{{ item.title }}</span>
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                    <div class="footer-list">
+                                        <h6>Explore</h6>
+                                        <ul>
+                                            {% for item in footer_menu_2 %}
+                                                <li>
+                                                    <a href="{{ item.url }}" class="link-underline">
+                                                        <span>{{ item.title }}</span>
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+
                         </div>
                     </div>
                 </div>

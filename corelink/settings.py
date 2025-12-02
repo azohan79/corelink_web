@@ -26,6 +26,7 @@ ALLOWED_HOSTS = ["corelink.es", "www.corelink.es", "188.245.187.57", "localhost"
 # Application definition
 
 INSTALLED_APPS = [
+    "modeltranslation",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -3,156 +3,296 @@
 
 {% block content %}
 
-<!-- page header -->
-<div class="page-header">
-    <div class="page-header-wrapper">
-        <div class="page-header-inner">
-            <div class="container">
-                <div class="row d-lg-flex align-items-lg-end">
-                    <div class="col-lg-6">
-                        <div class="page-header-content c-white">
-                            <h1>Contact Us.</h1>
-                            <ul>
-                                <li>
-                                    <a href="{% url 'index' %}" class="link-underline">
-                                        <span>Home</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <i class="las la-angle-right"></i>
-                                    <a href="{% url 'contact' %}" class="link-underline">
-                                        <span>Contact</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="page-header-search">
-                            <form action="{% url 'blog_list' %}" method="get">
-                                <input type="text" name="q" placeholder="Search">
-                                <button type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- background gradient / patterns -->
-            <div class="background-pattern background-pattern-2">
-                <div class="background-pattern-wrapper background-loop">
-                    <div class="background-pattern-1"
-                         style="background-image: url({% static 'assets/images/patterns/pattern.jpg' %});">
-                    </div>
-                    <div class="background-pattern-2"
-                         style="background-image: url({% static 'assets/images/patterns/pattern-2.jpg' %});">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- contact details -->
-<section class="contact-details">
-    <div class="contact-details-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
-                    <div class="section-heading section-heading-2 text-center width-55">
-                        <h2 class="c-dark">Many ways to reach us today.</h2>
-                        <p class="c-grey">
-                            Get in touch with the CoreLink team using any of the channels below.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row gx-5 gy-4">
-                <!-- Call -->
-                <div class="col-lg-4 col-md-6 col-10 offset-1 offset-md-0">
-                    <div class="contact-card">
-                        <div class="contact-card-inner">
-                            <div class="icon">
-                                <i class="las la-phone-volume"></i>
+    <div class="page-header">
+        <div class="page-header-wrapper">
+            <div class="page-header-inner">
+                <div class="container">
+                    <div class="row d-lg-flex align-items-lg-end">
+                        <div class="col-lg-6">
+                            <div class="page-header-content c-white">
+                                <h1>Contact Us</h1>
+                                <ul>
+                                    <li>
+                                        <a href="{% url 'index' %}" class="link-underline">
+                                            <span>Home</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <i class="las la-angle-right"></i>
+                                        <a href="{% url 'contact' %}" class="link-underline">
+                                            <span>Contact</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
-                            <h3 class="c-dark">Call Us</h3>
-                            <p class="c-grey">
-                                Phone: +34 000 000 000<br>
-                                Fax: +34 000 000 001
-                            </p>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Email -->
-                <div class="col-lg-4 col-md-6 col-10 offset-1 offset-md-0">
-                    <div class="contact-card">
-                        <div class="contact-card-inner">
-                            <div class="icon">
-                                <i class="las la-envelope-open-text"></i>
-                            </div>
-                            <h3 class="c-dark">Email Us</h3>
-                            <p class="c-grey">
-                                media@corelink.es<br>
-                                support@corelink.es
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Address -->
-                <div class="col-lg-4 col-md-6 col-10 offset-1 offset-md-0">
-                    <div class="contact-card">
-                        <div class="contact-card-inner">
-                            <div class="icon">
-                                <i class="las la-map-marked-alt"></i>
-                            </div>
-                            <h3 class="c-dark">Find Us</h3>
-                            <p class="c-grey">
-                                CoreLink, Inc.<br>
-                                Valencia, Spain
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- contact form -->
-            <div class="row mt-5">
-                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-                    <div class="contact-form">
-                        <form method="post" action="#">
-                            {% csrf_token %}
-                            <div class="row gx-3 gy-3">
-                                <div class="col-md-6">
-                                    <input type="text" name="name" placeholder="Your name">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" name="email" placeholder="Your email">
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" name="subject" placeholder="Subject">
-                                </div>
-                                <div class="col-12">
-                                    <textarea name="message" rows="5" placeholder="Message"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn-fill">
-                                        <span>Send Message</span>
+                        <div class="col-lg-6">
+                            <div class="page-header-search">
+                                <form>
+                                    <input type="text" placeholder="Search">
+                                    <button type="submit">
+                                        <i class="fas fa-search"></i>
                                     </button>
-                                </div>
+                                </form>
                             </div>
-                        </form>
-                        {# позже можно заменить на Django-форму #}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="background-pattern background-pattern-2">
+                <div class="background-pattern-img background-loop" style="background-image: url({% static 'assets/images/patterns/pattern.jpg' %});"></div>
+                <div class="background-pattern-gradient"></div>
+                <div class="background-pattern-bottom">
+                    <div class="image" style="background-image: url({% static 'assets/images/patterns/pattern-2.jpg' %})"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+    page header - end
+    -->
+
+    <!--
+    contact details - start
+    -->
+    <div class="contact-details">
+        <div class="contact-details-wrapper">
+            <div class="container">
+                <!--
+                contact details heading - start
+                -->
+                <div class="row">
+                    <div class="col-lg-12 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                        <div class="section-heading center width-55">
+                            <div class="sub-heading c-blue upper ls-1">
+                                <i class="las la-handshake"></i>
+                                <h5>get in touch</h5>
+                            </div>
+                            <div class="main-heading c-dark">
+                                <h1>Many ways to reach us today.</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                contact details heading - end
+                -->
+                <!--
+                contact details row - start
+                -->
+                <div class="row gx-5 details-row">
+                    <div class="col-lg-4 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                        <div class="app-feature-single app-feature-single-1">
+                            <div class="app-feature-single-wrapper">
+                                <div class="icon">
+                                    <i class="las la-phone-volume"></i>
+                                </div>
+                                <h3 class="c-dark">Call Us</h3>
+                                <p class="c-grey">
+                                    Phone: 
+                                    <a href="tel:+123456789" class="link-underline link-underline-1">
+                                        <span>+123 456 789</span>
+                                    </a>                                    
+                                </p>
+                                <p class="c-grey">
+                                    Fax:
+                                    <a href="tel:+123456789" class="link-underline link-underline-1">
+                                        <span>+123 456 789</span>
+                                    </a> 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                        <div class="app-feature-single app-feature-single-1">
+                            <div class="app-feature-single-wrapper">
+                                <div class="icon">
+                                    <i class="las la-envelope-open"></i>
+                                </div>
+                                <h3 class="c-dark">Email Us</h3>
+                                <p class="c-grey">
+                                    <a href="mailto:media@orions.com" class="link-underline link-underline-1">
+                                        <span>media@orions.com</span>
+                                    </a>
+                                </p>
+                                <p class="c-grey">
+                                    <a href="mailto:support@orions.com" class="link-underline link-underline-1">
+                                        <span>support@orions.com</span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                        <div class="app-feature-single app-feature-single-1">
+                            <div class="app-feature-single-wrapper">
+                                <div class="icon">
+                                    <i class="las la-map-marked-alt"></i>
+                                </div>
+                                <h3 class="c-dark">Find Us</h3>
+                                <p class="c-grey">Orions, Inc.</p>
+                                <p class="c-grey">30 Aarhus, Denmark</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                contact details row - end
+                -->
+            </div>
+        </div>
+    </div>
+    <!--
+    contact details - end
+    -->
+
+    <!--
+    contact form section - start
+    -->
+    <div class="contact-form-section">
+        <div class="contact-form-section-wrapper">
+            <div class="container">
+                <div class="row gx-5 contact-form-section-row">
+                    <div class="col-lg-6 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                        <!--
+                        contact form - start
+                        -->
+                        <div class="contact-form drop-shadow-2">
+                            <div class="contact-form-wrapper">
+                                <div class="section-heading section-heading-2 center">
+                                    <div class="sub-heading c-blue upper ls-1">
+                                        <i class="las la-envelope"></i>
+                                        <h5>contact</h5>
+                                    </div>
+                                    <div class="main-heading c-dark">
+                                        <h1>Write message</h1>
+                                    </div>
+                                </div>
+                                <form>
+                                    <div class="form-floating">
+                                        <input class="input form-control" id="name-field" type="text" placeholder="Full name">
+                                        <label for="name-field">Full name</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input class="input form-control" id="email-field" type="text" placeholder="Email address">
+                                        <label for="email-field">Email address</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input class="input form-control" id="message-field" type="text" placeholder="Message">
+                                        <label for="message-field">Message</label>
+                                    </div>
+                                    <button type="submit" class="button button-3">
+                                        <span class="button-inner">
+                                            <span class="button-content">
+                                                <span class="text">Submit Reply</span>
+                                            </span>
+                                        </span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <!--
+                        contact form - end
+                        -->
+                    </div>
+                    <div class="col-lg-6 offset-lg-0 col-md-8 offset-md-2 col-10 offset-1">
+                        <!--
+                        newsletter form - start
+                        -->
+                        <div class="contact-form contact-form-1 drop-shadow-2">
+                            <div class="contact-form-wrapper">
+                                <div class="section-heading section-heading-2 center">
+                                    <div class="sub-heading c-blue upper ls-1">
+                                        <i class="las la-envelope-open"></i>
+                                        <h5>subscribe</h5>
+                                    </div>
+                                    <div class="main-heading c-dark">
+                                        <h1>Our newsletter</h1>
+                                    </div>
+                                </div>
+                                <div class="contact-form-icon">
+                                    <i class="las la-envelope-open-text"></i>
+                                </div>
+                                <form>
+                                    <div class="form-floating">
+                                        <input class="input form-control" id="email-field-1" type="text" placeholder="Email address">
+                                        <label for="email-field-1">Email address</label>
+                                    </div>
+                                    <button type="submit" class="button button-2">
+                                        <span class="button-inner">
+                                            <span class="button-content">
+                                                <span class="text">Subscribe</span>
+                                            </span>
+                                        </span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <!--
+                        newsletter form - end
+                        -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+    <!--
+    contact form section - end
+    -->
+
+    <!--
+    instagram - start
+    -->
+    <div class="instagram">
+        <div class="instagram-wrapper">
+            <div class="instagram-slider">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="instagram-slide">
+                                <img src="{% static 'assets/images/instagram/instagram-img-1.jpg' %}" alt="instagram-slide-image">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="instagram-slide">
+                                <img src="{% static 'assets/images/instagram/instagram-img-2.jpg' %}" alt="instagram-slide-image">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="instagram-slide">
+                                <img src="{% static 'assets/images/instagram/instagram-img-3.jpg' %}" alt="instagram-slide-image">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="instagram-slide">
+                                <img src="{% static 'assets/images/instagram/instagram-img-4.jpg' %}" alt="instagram-slide-image">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="instagram-slide">
+                                <img src="{% static 'assets/images/instagram/instagram-img-5.jpg' %}" alt="instagram-slide-image">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="instagram-slide">
+                                <img src="{% static 'assets/images/instagram/instagram-img-6.jpg' %}" alt="instagram-slide-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <a href="#" class="button button-premium">
+                    <div class="button-inner">
+                        <div class="button-content">
+                            <i class="fab fa-instagram"></i>
+                            <h4>Follow us on Instagram</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
 
 {% endblock %}

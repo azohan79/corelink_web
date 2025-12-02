@@ -59,7 +59,6 @@
     </div>
     <!-- hero 1 - end -->
 
-    <!-- дальше просто та же верстка, только пути к картинкам меняем на {% static %} -->
 
     <!-- app features wide section - start -->
     <div class="app-feature app-feature-1">
@@ -67,21 +66,11 @@
             <div class="container">
                 ...
                 <!-- картинки/фоны типа -->
-                <!-- style="background-image: url({% static 'corelink/assets/images/patterns/pattern.jpg' %});" -->
                 ...
             </div>
         </div>
     </div>
     <!-- app features wide section - end -->
 
-    <!-- здесь оставляем все остальные секции как в твоей верстке
-         (video-section, feature-section, pricing-section, testimonial-section,
-          faq-section, screen-section, blog-section, cta-section,
-          contact-form-section)
-         просто аккуратно заменяя:
-         - src="assets/..." -> src="{% static 'corelink/assets/...' %}"
-         - style="background-image: url(assets/...)" ->
-           style="background-image: url({% static 'corelink/assets/...' %});"
-    -->
 
 {% endblock %}
